@@ -72,6 +72,15 @@ It will combine the images into one image (out.png) that will display
 withgamma.png when viewed with gamma support (e.g. in Firefox) 
 and withoutgamma.png when displayed without gamma support (e.g. As a thumbnail)
 
+## Other Example
+
+![Day and Night](http://f.cl.ly/items/1I291E1a1t2O3S2x2i12/DayNight.png)
+
+Was generated from:
+![Night](http://f.cl.ly/items/031k170c3k1i1Q0m0A3X/Night.png)
+and
+![Day](http://f.cl.ly/items/031k170c3k1i1Q0m0A3X/Day.png)
+
 ##FAQ
 
 - Why are the images so dark? - 
