@@ -1,0 +1,54 @@
+#!/usr/bin/env ruby
+
+require "doubleVision"
+
+require 'optparse'
+
+options = { :gamma => 0.023, :fade1 => 220/255.0, :fade2 => 210/255.0, :shift => 10}
+USAGE = "Usage: doubleVision [options] withgamma.png withoutgamma.png out.png"
+
+optParser = OptionParser.new do |opts|
+  opts.banner = USAGE
+
+	opts.separator " "
+
+	opts.on("-g", "--gamma gamma", Float,
+	  "Specify the gamma value to use.",
+	  "Default: #{options[:gamma]}"
+	) { |v| options[:gamma] = v}
+
+	opts.on("-f","--gammafade fract", Float,
+	  "Specify the factor used to lower the brightness of the first image.",
+	  "Needed for images with full white pixels that show up in the non-gamma image.",
+	  "Default: #{options[:fade1]}"
+	) { |v| options[:fade1] = v}
+	opts.on("-F","--nogammafade fract", Float,
+	  "Specify the factor used to lower the brightness of the second image.",
+	  "Needed for images with bright pixels that show up in the gamma image.",
+	  "Default: #{options[:fade2]}"
+	) { |v| options[:fade2] = v}
+
+	opts.on("-s","--shift fract", Float,
+	  "Specify the amount to shift up brightness in the first image.",
+	  "Needed for images with full black pixels that show up in the non-gamma image.",
+	  "Default: #{options[:shift]}"
+	) { |v| options[:shift] = v}
+
+	opts.separator ""
+
+	opts.on("-h", "--help", "Show this help message.") { puts opts; exit }
+end
+optParser.parse!
+
+outfile = ARGV[2]
+
+puts "Generating image..."
+unless ARGV.length < 3
+	DoubleVision.createImageFiles(ARGV[0],ARGV[1],outfile,options)
+else
+	puts "Must provide images to use."
+	puts optParser
+	exit
+end
+
+puts "Sucessfully created #{outfile}"
