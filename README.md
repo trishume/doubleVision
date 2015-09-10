@@ -74,12 +74,12 @@ and withoutgamma.png when displayed without gamma support (e.g. As a thumbnail)
 
 ## Other Example
 
-![Day and Night](//raw.githubusercontent.com/trishume/doubleVision/master/examples/DayNight.png)
+![Day and Night](https://raw.githubusercontent.com/trishume/doubleVision/master/examples/DayNight.png)
 
 Was generated from:
-![Night](//raw.githubusercontent.com/trishume/doubleVision/master/examples/Night.png)
+![Night](https://raw.githubusercontent.com/trishume/doubleVision/master/examples/Night.png)
 and
-![Day](//raw.githubusercontent.com/trishume/doubleVision/master/examples/Day.png)
+![Day](https://raw.githubusercontent.com/trishume/doubleVision/master/examples/Day.png)
 
 ##FAQ
 
